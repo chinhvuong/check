@@ -25,20 +25,105 @@ export const TOKEN_BY_CHAIN = {
     1: ['0x2260FAC5E5542a773Aa44fBCfeDf7C193bc2C599', '0xdAC17F958D2ee523a2206206994597C13D831ec7', '0x4Fabb145d64652a948d72533023f6E7A623C7C53', '0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2']
 }
 
+const BSC_1 = [
+    "https://endpoints.omniatech.io/v1/bsc/mainnet/public",
+    "https://bsc.blockpi.network/v1/rpc/public",
+    "https://rpc.ankr.com/bsc",
+    "https://bsc-mainnet.nodereal.io/v1/64a9df0874fb4a93b9d0a3849de012d3",
+    "https://bsc.publicnode.com",
+    "https://bsc-dataseed3.defibit.io",
+    "https://bscrpc.com",
+    "https://bsc-dataseed1.bnbchain.org",
+    "https://bsc-dataseed.binance.org",
+    "https://bsc-dataseed3.binance.org",
+    "https://bsc-dataseed2.binance.org",
+    "https://bsc-dataseed1.binance.org",
+    "https://bsc-dataseed4.ninicoin.io",
+    "https://bsc-dataseed2.bnbchain.org",
+    "https://bsc-dataseed4.binance.org",
+    "https://bsc-dataseed4.defibit.io",
+    "https://bsc-dataseed3.bnbchain.org",
+    "https://bsc-dataseed2.defibit.io",
+    "https://bsc-mainnet.public.blastapi.io",
+    "https://bsc.rpc.blxrbdn.com",
+    "https://bsc-mainnet.rpcfast.com?api_key=xbhWBI1Wkguk8SNMu1bvvLurPGLXmgwYeC4S6g2H7WdwFigZSmPWVZRxrskEQwIf",
+    "https://koge-rpc-bsc.48.club",
+    "https://bsc-dataseed4.bnbchain.org",
+    "https://bsc-dataseed3.ninicoin.io",
+    "https://rpc-bsc.48.club",
+    "https://bsc-dataseed1.defibit.io",
+    "https://bsc-dataseed2.ninicoin.io",
+    "https://binance.nodereal.io",
+    "https://1rpc.io/bnb",
+    "https://bsc-dataseed1.ninicoin.io",
+    "https://bsc.meowrpc.com",
+    "https://bnb.api.onfinality.io/public",
+    "wss://bsc-ws-node.nariox.org",
+    "https://api.zan.top/node/v1/bsc/mainnet/public",
+    "https://nodes.vefinetwork.org/smartchain",
+    "https://bsc.rpcgator.com",
+    "https://bsc-mainnet.gateway.pokt.network/v1/lb/6136201a7bad1500343e248d"
+]
+
+const ETH_1 = [
+    "https://eth.llamarpc.com",
+    "https://virginia.rpc.blxrbdn.com",
+    "https://uk.rpc.blxrbdn.com",
+    "https://singapore.rpc.blxrbdn.com",
+    "https://eth.api.onfinality.io/public",
+    "https://eth.rpc.blxrbdn.com",
+    "https://rpc.ankr.com/eth",
+    "https://eth-rpc.gateway.pokt.network",
+    "https://ethereum.blockpi.network/v1/rpc/public",
+    "https://rpc.mevblocker.io",
+    "https://eth-mainnet.nodereal.io/v1/1659dfb40aa24bbb8153a677b98064d7",
+    "https://eth.meowrpc.com",
+    "https://rpc.eth.gateway.fm",
+    "https://rpc.flashbots.net",
+    "https://eth-mainnet.public.blastapi.io",
+    "https://gateway.tenderly.co/public/mainnet",
+    "https://eth-mainnet.g.alchemy.com/v2/demo",
+    "https://eth.drpc.org",
+    "https://mainnet.gateway.tenderly.co",
+    "https://api.bitstack.com/v1/wNFxbiJyQsSeLrX8RRCHi7NpRxrlErZk/DjShIqLishPCTB9HiMkPHXjUM9CNM9Na/ETH/mainnet",
+    "https://api.securerpc.com/v1",
+    "https://cloudflare-eth.com",
+    "https://rpc.payload.de",
+    "https://eth-mainnet.rpcfast.com?api_key=xbhWBI1Wkguk8SNMu1bvvLurPGLXmgwYeC4S6g2H7WdwFigZSmPWVZRxrskEQwIf",
+    "https://eth-mainnet-public.unifra.io",
+    "https://endpoints.omniatech.io/v1/eth/mainnet/public",
+    "https://core.gashawk.io/rpc",
+    "https://api.zmok.io/mainnet/oaen6dy8ff6hju9k",
+    "https://1rpc.io/eth",
+    "https://ethereum.publicnode.com",
+    "https://rpc.builder0x69.io",
+    "https://rpc.tenderly.co/fork/c63af728-a183-4cfb-b24e-a92801463484",
+    "https://api.mycryptoapi.com/eth",
+    "https://api.zan.top/node/v1/eth/mainnet/public",
+    "https://rpc.chain49.com/ethereum?api_key=14d1a8b86d8a4b4797938332394203dc",
+    "https://main-light.eth.linkpool.io",
+    "https://ethereumnodelight.app.runonflux.io",
+    "https://mainnet.eth.cloud.ava.do",
+    "https://eth.getblock.io/&amp;lt;api_key&amp;gt;/mainnet"
+]
+
+const BSC_SET_1 = ['https://bsc-dataseed1.binance.org', 'https://bsc-dataseed2.binance.org',
+    'https://bsc.publicnode.com', 'https://bsc-dataseed2.bnbchain.org',
+    'https://endpoints.omniatech.io/v1/bsc/mainnet/public',
+    'https://bsc-dataseed3.binance.org'
+]
+
+const ETH_SET_1 = ['https://eth-mainnet.g.alchemy.com/v2/mPSHcj0adebxxiMfyc0ypJj4BY_0REdU',
+    'https://eth-mainnet.g.alchemy.com/v2/G71KAWfCy3Usn__ostlJiQroy-6c3r5X',
+    'https://eth-mainnet.g.alchemy.com/v2/qGtpmyumom3ZN2GZpnURw4H9vsKMGjgt',
+    'https://api.zmok.io/mainnet/oaen6dy8ff6hju9k',
+    'https://uk.rpc.blxrbdn.com',
+    'https://rpc.ankr.com/eth',
+    'https://eth.llamarpc.com'
+
+]
 
 export const PROVIDER_BY_CHAIN = {
-    56: ['https://bsc-dataseed1.binance.org', 'https://bsc-dataseed2.binance.org',
-        'https://bsc.publicnode.com', 'https://bsc-dataseed2.bnbchain.org',
-        'https://endpoints.omniatech.io/v1/bsc/mainnet/public',
-        'https://bsc-dataseed3.binance.org'
-    ],
-    1: ['https://eth-mainnet.g.alchemy.com/v2/mPSHcj0adebxxiMfyc0ypJj4BY_0REdU',
-        'https://eth-mainnet.g.alchemy.com/v2/G71KAWfCy3Usn__ostlJiQroy-6c3r5X',
-        'https://eth-mainnet.g.alchemy.com/v2/qGtpmyumom3ZN2GZpnURw4H9vsKMGjgt',
-        'https://api.zmok.io/mainnet/oaen6dy8ff6hju9k',
-        'https://uk.rpc.blxrbdn.com',
-        'https://rpc.ankr.com/eth',
-        'https://eth.llamarpc.com'
-
-    ]
+    56: BSC_1,
+    1: ETH_1
 }
