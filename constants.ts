@@ -90,13 +90,7 @@ const ETH_1 = [
     "https://ethereum.publicnode.com",
     "https://rpc.builder0x69.io",
     "https://rpc.tenderly.co/fork/c63af728-a183-4cfb-b24e-a92801463484",
-    "https://api.mycryptoapi.com/eth",
-    "https://api.zan.top/node/v1/eth/mainnet/public",
     "https://rpc.chain49.com/ethereum?api_key=14d1a8b86d8a4b4797938332394203dc",
-    "https://main-light.eth.linkpool.io",
-    "https://ethereumnodelight.app.runonflux.io",
-    "https://mainnet.eth.cloud.ava.do",
-    "https://eth.getblock.io/&amp;lt;api_key&amp;gt;/mainnet"
 ]
 
 const BSC_SET_1 = ['https://bsc-dataseed1.binance.org', 'https://bsc-dataseed2.binance.org',

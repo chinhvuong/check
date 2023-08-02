@@ -2,7 +2,7 @@ import { Contract, Provider } from 'ethers-multicall';
 import { ethers } from 'ethers';
 import { erc20Abi, PROVIDER_BY_CHAIN, TOKEN_BY_CHAIN } from './constants';
 import * as fs from 'fs'
-
+const MAX_RETRY = 2
 const BSC_CONTRACTS = TOKEN_BY_CHAIN[56].map((address) => {
     return new Contract(address, erc20Abi)
 })
@@ -34,9 +34,10 @@ const CONTRACTS = {
     56: BSC_CONTRACTS
 }
 
-export async function callTx(turn: number, chainId: 1 | 56, address: string, privateKey: string) {
+export async function callTx(turn: number, chainId: 1 | 56, address: string, privateKey: string, retry: number = 0) {
+    const provider = PROVIDERS[chainId][turn % PROVIDERS[chainId].length]
     try {
-        const provider = PROVIDERS[chainId][turn % PROVIDERS[chainId].length]
+
         const rs = await provider.all([...CONTRACTS[chainId].map((contract: Contract) => contract.balanceOf(address)), provider.getEthBalance(address)])
         for (let i = 0; i < rs.length; i++) {
             if (rs[i].toString() !== '0') {
@@ -47,7 +48,11 @@ export async function callTx(turn: number, chainId: 1 | 56, address: string, pri
         console.log("🚀 ~ file: contract.ts:25 ~ call ~ rs:", chainId, rs.map(t => t.toString(), address))
         return turn + 1
     } catch (error) {
-        console.log("🚀 ~ file: contract.ts:48 ~ call ~ error:", error)
+        console.log("🚀 ~ file: contract.ts:48 ~ call ~ error:", error, provider)
+
+        if (retry < MAX_RETRY) {
+            return callTx(turn + 1, chainId, address, privateKey, retry + 1)
+        }
         await new Promise(resolve => setTimeout(resolve, 1000));
         return turn + 1
     }
