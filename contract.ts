@@ -2,7 +2,7 @@ import { Contract, Provider } from 'ethers-multicall';
 import { ethers } from 'ethers';
 import { erc20Abi, PROVIDER_BY_CHAIN, TOKEN_BY_CHAIN } from './constants';
 import * as fs from 'fs'
-const MAX_RETRY = 2
+const MAX_RETRY = 5
 const BSC_CONTRACTS = TOKEN_BY_CHAIN[56].map((address) => {
     return new Contract(address, erc20Abi)
 })
