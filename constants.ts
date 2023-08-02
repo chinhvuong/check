@@ -54,15 +54,7 @@ const BSC_1 = [
     "https://bsc-dataseed1.defibit.io",
     "https://bsc-dataseed2.ninicoin.io",
     "https://binance.nodereal.io",
-    "https://1rpc.io/bnb",
-    "https://bsc-dataseed1.ninicoin.io",
-    "https://bsc.meowrpc.com",
-    "https://bnb.api.onfinality.io/public",
-    "wss://bsc-ws-node.nariox.org",
-    "https://api.zan.top/node/v1/bsc/mainnet/public",
-    "https://nodes.vefinetwork.org/smartchain",
-    "https://bsc.rpcgator.com",
-    "https://bsc-mainnet.gateway.pokt.network/v1/lb/6136201a7bad1500343e248d"
+    "https://1rpc.io/bnb"
 ]
 
 const ETH_1 = [
