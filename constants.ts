@@ -110,6 +110,6 @@ const ETH_SET_1 = ['https://eth-mainnet.g.alchemy.com/v2/mPSHcj0adebxxiMfyc0ypJj
 ]
 
 export const PROVIDER_BY_CHAIN = {
-    56: BSC_1,
-    1: ETH_1
+    56: BSC_SET_1,
+    1: ETH_SET_1
 }
